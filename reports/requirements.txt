@@ -2,3 +2,4 @@ json2html==1.3.0
 pandas==2.0.3
 python-dotenv==1.0.0
 redshift_connector==2.0.913
+pytest==7.4.0
