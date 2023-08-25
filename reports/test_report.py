@@ -11,7 +11,7 @@ from connections import get_connection_container
 
 def test_get_connection_container(monkeypatch):
     """Verifies that fake connection was made"""
-    monkeypatch.setattr("connections.connect", lambda database, user, password, port, host: None)
+    monkeypatch.setattr("connections.connect", lambda **kwargs: None)
     assert get_connection_container() == None
 
 
