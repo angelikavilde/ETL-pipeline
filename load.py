@@ -4,11 +4,12 @@ from os import remove
 
 from redshift_connector import Connection
 import pandas as pd
+from pandas import DataFrame
 
 from connections import get_connection_container
 
 
-def upload_transaction_data(conn: Connection, transactional_data: list[list[str]]) -> None:
+def upload_transaction_data(conn: Connection, transactional_data: DataFrame) -> None:
     """Uploads transaction data to the database."""
     payment_types = {"card":1,"cash":2}
     transactional_data.set_index('truck_id', inplace=True)
