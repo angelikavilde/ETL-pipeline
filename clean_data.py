@@ -24,7 +24,7 @@ def clean_the_dataset(conn: Connection, filepath: str) -> None:
     truck_transactions["total"] = pd.to_numeric(truck_transactions["total"], errors="coerce")
     truck_transactions = truck_transactions.dropna(subset=["total"])
     too_high_for_total = truck_transactions["total"].quantile(0.95)
-    truck_transactions = truck_transactions[truck_transactions["total"] < too_high_for_total]
+    truck_transactions = truck_transactions[truck_transactions["total"] <= too_high_for_total]
     truck_transactions = truck_transactions[truck_transactions["total"] > 0]
     truck_transactions = truck_transactions[truck_transactions["type"].isin(["card","cash"])]
     no_card_reader = get_trucks_no_card_reader(conn)
