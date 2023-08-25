@@ -1,10 +1,21 @@
+# Environmental variables
 .env
+
+# Virtual environment files
 venv
+
+# Pytest files
 __pycache__
 .pytest_cache
 .coverage
+
+# Mac OS files
 .DS_Store
+
+# Big data files excluded from dir:
 data
+
+# Terraform related files
 *.tfvars
 *.terraform
 *.hcl
