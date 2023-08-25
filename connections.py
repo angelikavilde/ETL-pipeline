@@ -18,5 +18,6 @@ def get_connection_container() -> Connection:
 
 def get_bucket_connection() -> BaseClient:
     """Returns connection to the AWS buckets"""
-    return client("s3", aws_access_key_id = environ.get("ACCESS_KEY"),
-                aws_secret_access_key = environ.get("SECRET_KEY"))
+    load_dotenv()
+    return client("s3", aws_access_key_id = environ["ACCESS_KEY"],
+                aws_secret_access_key = environ["SECRET_KEY"])
